@@ -1,5 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
+useEffect(() => {
+
+}, []);
+
+const getuser = async() => {
+	let Response = await fetch('https://playground.4geeks.com/todo/users/staylors')
+	let Data = await response.json()
+	if (typeof data.name !== 'undefined') {
+		setTodos(data.Todos)
+	}
+	else if(typeof data.detail != 'undefined') {
+		let response = await fetch('https://playground.4geeks.com/todo/todos/staylors',{
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+		})
+		let data = await response.json()
+		console.log(data)
+	}
+}
 
 const Home = () => {
 	
